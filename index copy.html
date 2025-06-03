@@ -1,14 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Happy Birthday Chilli !</title>
+  <title>Happy Birthday Sarah!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #ff6ec4;
       --secondary: #7873f5;
       --accent: #fdd835;
+    }
+    
+    *{
+      margin: 0%;
+      padding: 0%;
+      box-sizing: border-box;
     }
 
     body {
@@ -20,41 +28,44 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      overflow: hidden;
+      padding: 20px;
       color: white;
+      overflow: hidden;
+      text-align: center;
     }
 
     h1 {
-      font-size: 4rem;
+      font-size: 4.0rem;
       color: var(--accent);
       text-shadow:
+        0 0 5px var(--accent),
         0 0 10px var(--accent),
         0 0 20px var(--accent),
-        0 0 30px var(--accent),
-        0 0 40px var(--primary);
-      animation: float 3s ease-in-out infinite, glow 1.s ease-in-out infinite;
-      margin: 2rem;
-      text-align: center;
+        0 0 30px var(--primary);
+      animation: float 3s ease-in-out infinite, glow 2s ease-in-out infinite;
+      margin-bottom: 3rem;
+      line-height: 1.4;
+      font-weight: bolder;
+      margin-top: 40px;
     }
 
     @keyframes float {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-15px); }
+      50% { transform: translateY(-10px); }
     }
 
-    @keyframes glow {
-      0%, 100% {
-        text-shadow:
-          0 0 10px var(--accent),
-          0 0 20px var(--accent),
-          0 0 30px var(--accent),
-          0 0 40px var(--primary);
-      }
+  @keyframes glow {
+  0%, 100% {
+    text-shadow: 
+      0 0 10px var(--accent),
+      0 0 20px var(--accent),
+      0 0 40px var(--primary);
+  }
+
       50% {
         text-shadow:
           0 0 5px var(--accent),
           0 0 10px var(--accent),
-          0 0 15px var(--accent),
           0 0 20px var(--primary);
       }
     }
@@ -62,19 +73,18 @@
     .btn {
       background: linear-gradient(135deg, #ff6b6b, #ff1493);
       color: white;
-      padding: 0.8rem 1.5rem;
+      padding: 0.8rem 2rem;
       font-size: 1.2rem;
       border: none;
       border-radius: 30px;
       cursor: pointer;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s ease;
       animation: pulse 2s infinite;
-      margin-top: 1rem;
     }
 
     .btn:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
 
     @keyframes pulse {
@@ -84,7 +94,8 @@
     }
 
     #cake {
-      font-size: 6rem;
+      font-size: 4rem;
+      margin-bottom: 1rem;
       cursor: pointer;
       animation: float 4s ease-in-out infinite;
     }
@@ -99,16 +110,38 @@
       50% { transform: translateY(-50px); }
       100% { transform: translateY(0); }
     }
+
+    /* 🔄 Desktop adjustments */
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 4rem;
+      }
+
+      .btn {
+        font-size: 1.5rem;
+        padding: 1rem 2.5rem;
+      }
+
+      #cake {
+        font-size: 5rem;
+      }
+
+      body {
+        padding: 40px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <h1>🎉 Happy Birthday Sarah 🎂</h1>
+  <h1>🎉 Happy<br>Birthday<br>Sarah 🎂</h1>
+
   <div id="cake"></div>
+
   <button class="btn" onclick="createHearts()">Click for a Surprise</button>
 
   <audio id="birthdayAudio" autoplay loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    <source src="C:\Users\venka\Downloads\videoplayback-2_FX262Zkp.mp3"type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 
@@ -116,7 +149,7 @@
     function createHearts() {
       for (let i = 0; i < 20; i++) {
         const heart = document.createElement('div');
-        heart.textContent = '💖';
+        heart.textContent = '❤️';
         heart.style.position = 'fixed';
         heart.style.left = Math.random() * 100 + 'vw';
         heart.style.top = Math.random() * 100 + 'vh';
@@ -148,5 +181,43 @@
     document.getElementById('cake').addEventListener('click', sparkleEffect);
   </script>
 
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
 </html>
